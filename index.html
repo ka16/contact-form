@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- bootstrapはリセット昨日が標準でついている -->
+  <link rel="stylesheet" href="style.css">
+  <title>ご利用アンケート</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>ご利用アンケート</h1>
+        </div>
+        <div class="col-sm-6 align-right">
+          <a href="">HOMEへ戻る</a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <form action="" method="post" class="row">
+      <!-- getは送信した値をURLにのせて送る→URLが長くなる postはURLが長くならない -->
+      <div class="col-sm-8 col-sm-offset-2"> <!-- offsetは使わない場所という意味 -->
+        <p>この度は、本書をご利用いただきありがとうございます。恐れ入りますが、以下のフォームにご入力いただき、送信していただけると幸いです。</p>
+
+        <div class="form-group">
+          <label for="name">お名前 <span class="label bg-danger" style="color: white; font-size: 0.8em; padding: 2px;">必須</span></label>
+          <input type="name" id="name" name="name" class="form-control" placeholder="例) 山田 太郎">
+        </div>
+
+        <div class="form-group">
+          <label for="job">ご職業 <span class="label bg-danger" style="color: white; font-size: 0.8em; padding: 2px;">必須</span></label>
+          <select name="job" id="job" class="form-control"> <!-- ページが長くならないため、通常は選択肢が10個以上あるときに使う、今回は選択肢が少ないためラジオボタンでOK -->
+            <option value="">選択してください</option>
+            <option value="会社員">会社員</option>
+            <option value="学生">学生</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>知りたい内容(複数回答可) <span class="label label-success">任意</span></label>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q1" value="html">
+              HTML
+            </label> <!-- labelタグで囲うことでチェックボックスとHTMLが紐付けられる -->
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q1" value="css">
+              CSS
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q1" value="javascript">
+              JavaScript
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q1" value="php">
+              PHP
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>理解度はいかがですか？</label>
+          <div>
+            <label class="radio-inline">
+              <input type="radio" name="q2" value="1">
+              理解できなかった
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="q2" value="2">
+              だいたい理解できた
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="q2" value="3">
+              理解できた
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="q2" value="4" checked>
+              回答しない
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">ご意見</label>
+          <textarea name="message" rows="8" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">送信する</button>
+
+      </div>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <footer>
+      <p>&copy; H2O space</p>
+    </footer>
+  </div>
+</body>
+</html>
